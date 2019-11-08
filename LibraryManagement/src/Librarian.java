@@ -136,16 +136,13 @@ public class Librarian extends JFrame implements ActionListener
              jbb2.setVisible(false);
              jbb3.setVisible(false);
              
-             if(e.getSource()==jb3)
-        {
-             jbb1.setVisible(false);
-             jbb2.setVisible(false);
-             jbb3.setVisible(false);
-              ViewAccount ob=new ViewAccount();
-              ob.sp.setVisible(true);
+            cnt.removeAll();
+            ViewAccount ob=new ViewAccount();
+            ob.sp.setVisible(true);
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);
-        }
+            cnt.repaint();
+            
         }
           if(e.getSource()==jb4)
         {
@@ -153,9 +150,11 @@ public class Librarian extends JFrame implements ActionListener
              jbb2.setVisible(false);
              jbb3.setVisible(false);
              
+            cnt.removeAll();
             IssueBook ob=new IssueBook();
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);
+            cnt.repaint();
             
         }
            if(e.getSource()==jb5)
@@ -164,19 +163,23 @@ public class Librarian extends JFrame implements ActionListener
              jbb2.setVisible(false);
              jbb3.setVisible(false);
              
+             cnt.removeAll();
              ReturnBook ob=new ReturnBook();
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);
+            cnt.repaint();
         }
             if(e.getSource()==jb6)
         {
              jbb1.setVisible(false);
              jbb2.setVisible(false);
              jbb3.setVisible(false);
-             
-              SearchCatalog ob=new SearchCatalog();
+            
+            cnt.removeAll();
+            SearchCatalog ob=new SearchCatalog();
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);
+            cnt.repaint();
         }
              if(e.getSource()==jb7)
         {
@@ -196,9 +199,11 @@ public class Librarian extends JFrame implements ActionListener
              jbb2.setVisible(false);
              jbb3.setVisible(false);
              
+             cnt.removeAll();
             AddBook ob=new AddBook();
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);  
+            cnt.repaint();
         }
          if(e.getSource()==jbb2)
         {
@@ -206,19 +211,23 @@ public class Librarian extends JFrame implements ActionListener
              jbb2.setVisible(false);
              jbb3.setVisible(false);
              
+            cnt.removeAll();
             UpdateBook ob=new UpdateBook();
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);  
+            cnt.repaint();
         }
           if(e.getSource()==jbb3)
         {
              jbb1.setVisible(false);
              jbb2.setVisible(false);
              jbb3.setVisible(false);
-             
+            
+            cnt.removeAll();
             DeleteBook ob=new DeleteBook();
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);  
+            cnt.repaint();
         }
                      
     
