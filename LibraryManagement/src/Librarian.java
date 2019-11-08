@@ -8,16 +8,7 @@ import java.sql.*;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author USER
- */
 public class Librarian extends JFrame implements ActionListener
 {
 
@@ -144,6 +135,17 @@ public class Librarian extends JFrame implements ActionListener
              jbb1.setVisible(false);
              jbb2.setVisible(false);
              jbb3.setVisible(false);
+             
+             if(e.getSource()==jb3)
+        {
+             jbb1.setVisible(false);
+             jbb2.setVisible(false);
+             jbb3.setVisible(false);
+              ViewAccount ob=new ViewAccount();
+              ob.sp.setVisible(true);
+            ob.frame.setVisible(false);
+            cnt.add(ob.parentPanel);
+        }
         }
           if(e.getSource()==jb4)
         {

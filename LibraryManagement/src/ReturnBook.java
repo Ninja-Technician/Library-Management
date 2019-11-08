@@ -23,7 +23,7 @@ public class ReturnBook extends JFrame implements ActionListener
         
         frame=new JFrame();
         //frame.setVisible(true);
-        frame.setBounds(0,0,1500,900);
+        frame.setBounds(0,0,1920,1000);
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //frame.setBackground(Color.GREEN);

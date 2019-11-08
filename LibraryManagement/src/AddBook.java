@@ -5,6 +5,7 @@ import java.awt.event.*;
 import java.awt.*;
 public class AddBook extends JFrame implements ActionListener
 {
+    
     JLabel label1;
     JLabel lb1,lb2,lb3,lb4,lb5,lb6,lb7,lb8;
     JTextField tx1,tx2,tx3,tx4,tx5,tx6,tx7,tx8;
@@ -15,8 +16,8 @@ public class AddBook extends JFrame implements ActionListener
     
     AddBook()
     {
-        int width=550,height=100;
         
+        int width=550,height=100;
         frame=new JFrame();
        
         frame.setBounds(0,0,1920,1000);
@@ -33,7 +34,7 @@ public class AddBook extends JFrame implements ActionListener
         JPanel p = new JPanel();
         parentPanel.add(p);
         p.setLayout(null);
-        p.setBounds(0,50,500,600);
+        p.setBounds(675,50,500,600);
         p.setBackground(Color.RED);
         
         
@@ -110,7 +111,7 @@ public class AddBook extends JFrame implements ActionListener
         submit.addActionListener(this);
         
           
-         frame.setVisible(true);
+        // frame.setVisible(true);
       //  frame.revalidate();
        
             
