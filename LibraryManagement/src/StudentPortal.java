@@ -27,11 +27,6 @@ public class StudentPortal extends JFrame implements ActionListener
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //frame.setBackground(Color.GREEN);
         Container c= frame.getContentPane();
-        // brdr = new BorderLayout();
-       // c.setBackground(Color.GREEN);
-        //c.setLayout(brdr);
-        
-   
         
         JPanel top = new JPanel();
         c.add(top);
@@ -195,13 +190,6 @@ public class StudentPortal extends JFrame implements ActionListener
         title4.setFont(new Font("Glyphic",Font.BOLD,40));
         right.add(title4);
         
-        // Adding components into the Pannel
-        /*
-        ImageIcon logo=new ImageIcon("H:\\Library-Management\\LibraryManagement\\src\\image\\dummy.jpg");
-        pic=new JLabel(logo);
-        pic.setBounds(170,80,100,100);
-        p.add(pic);
-               */
         
             frame.setVisible(true);
             frame.setResizable(false);

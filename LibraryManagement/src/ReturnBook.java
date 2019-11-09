@@ -15,12 +15,12 @@ public class ReturnBook extends JFrame implements ActionListener
     JFrame frame;
     JPanel parentPanel;
      String returnDat="15/5/2020";
-    
+     
     
     ReturnBook()
     {
-        int pointX=550,pointY=100;
         
+        int pointX=550,pointY=100;
         frame=new JFrame();
         //frame.setVisible(true);
         frame.setBounds(0,0,1920,1000);
@@ -45,14 +45,6 @@ public class ReturnBook extends JFrame implements ActionListener
         Color col = new Color(255,212,169);
         Color colLogin = new Color(11,13,4);
         Color colSignup = new Color(51,51,255);
-        
-        // Adding components into the Pannel
-               /*
-        label1=new JLabel("LIBRARIAN LOG IN");
-        label1.setBounds(60,20,400,50);
-        label1.setFont(new Font("Glyphic",Font.BOLD,30));
-        p.add(label1);
-                       */
         
         isbn=new JLabel("ISBN");
         isbn.setBounds(30,30,120,30);
@@ -81,25 +73,6 @@ public class ReturnBook extends JFrame implements ActionListener
         returnDt.setFont(text);
         p.add(returnDt);
         
-        /*
-        issDt=new JTextField();
-        issDt.setBounds(170,170,50,30);
-        issDt.setFont(text);
-        issDt.setBackground(col);
-        p.add(issDt);
-        
-        issMnth=new JTextField();
-        issMnth.setBounds(245,170,50,30);
-        issMnth.setFont(text);
-        issMnth.setBackground(col);
-        p.add(issMnth);
-        
-        issYr=new JTextField();
-        issYr.setBounds(315,170,50,30);
-        issYr.setFont(text);
-        issYr.setBackground(col);
-        p.add(issYr);
-        */
         String strDt[]=new String[31];
         for(int i=0;i<31;i++)
             strDt[i]=i+1+"";
@@ -136,10 +109,7 @@ public class ReturnBook extends JFrame implements ActionListener
         expDt.setBounds(30,240,120,30);
         expDt.setFont(text);
         p.add(expDt);
-        
-  
-        
-        
+         
         rtnExp=new JTextField();
         rtnExp.setBounds(170,240,200,30);
         rtnExp.setEditable(false);
@@ -161,11 +131,12 @@ public class ReturnBook extends JFrame implements ActionListener
         p.add(submit);
         
         submit.addActionListener(this);
-          dt.addActionListener(this);
+        dt.addActionListener(this);
         mn.addActionListener(this);
         yr.addActionListener(this);
         
           p.validate();
+          frame.setResizable(false);
        
             
     }
@@ -211,87 +182,18 @@ public class ReturnBook extends JFrame implements ActionListener
             
               System.out.println("Expected date = "+intDate+" / "+intMnth+" / "+intYr);
               System.out.println("Returned date = "+rtnDate+" / "+rtnMnth+" / "+rtnYr);
-            int day=0,doNotEnter=0;
-            double fineAmount=0.0;
-           
-            if(intMnth>rtnMnth)
-            {
-                if(rtnYr>intYr)
-                rtnMnth=12+rtnMnth;
-                else
-                doNotEnter=1;
-                    System.out.println("intMnth > rtnMnth entered");
-            }
-             if((intMnth==rtnMnth)&&(intYr==rtnYr))
-            {
-                day=rtnDate-intDate;
-                System.out.println("equl to entered");
-            }
-            else
-            {
-                if(!(doNotEnter==1))
-                {
-                      System.out.println("For loop section entered");
-            for(int i=intMnth;i<=rtnMnth;i++)
-            {
-                if(!(intMnth==rtnMnth))
-                {
-                if(i==intMnth)
-                {
-                     if(i==2)
-                     {
-                         day=28-intDate;
-                       }
-                       else if((i==4)||(i==6)||(i==9)||(i==11))
-                            day=30-intDate;
-                        else
-                             day=31-intDate;
-                }
-                else if(i==rtnMnth)
-                    day=day+rtnDate;
-                else
-                {
-                     if((i%12)==2)
-                     {
-                         day=day+28;
-                       }
-                       else if(((i%12)==4)||((i%12)==6)||((i%12)==9)||((i%12)==11))
-                            day=day+30;
-                        else
-                             day=day+31;
-                }
-            }
-            }
-            }
-            }
-            /*
-            if(rtnMnth>12)
-            {
-                rtnMnth=rtnMnth%12;
-                rtnYr=intYr+1;
-            }
-            else
-            {
-                rtnYr=intYr;
-            }
-            */
-             day=day+(rtnYr-intYr)*365;
-             if(day<0)
-                 day=0;
-            fineAmount=day*5;
+              
+              ReturnBookFunction ob=new ReturnBookFunction();
+              double fineAmount;
+              int day=0;
+             
+              day=ob.dayCalculation(intDate, intMnth, intYr, rtnDate, rtnMnth, rtnYr);
+              
+              fineAmount=day*5;
             fine.setText("Rs. "+fineAmount+" & "+day+" days");
            // fine.setText(intDate+"/"+intMnth+"/"+intYr);
             //fine.setText(rtnDate+"/"+rtnMnth+"/"+rtnYr);
         }
-        /*
-         if(e.getSource()==btn1)
-        {
-            label1.setText("STUDENT LOG IN");
-        }
-          if(e.getSource()==btn2)
-        {
-            label1.setText("LIBRARIAN LOG IN");
-        }
-              */
+      
     }
 }

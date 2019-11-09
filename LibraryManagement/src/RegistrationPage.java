@@ -21,13 +21,7 @@ public class RegistrationPage extends JFrame implements ActionListener
         frame.setBounds(0,0,1920,1000);
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.setBackground(Color.GREEN);
-        /*
-        JPanel p = new JPanel();
-        frame.add(p);
-        p.setBounds(0,0,1500,900);
-        p.setBackground(Color.GREEN);
-      */
+       
         JPanel p = new JPanel();
         frame.add(p);
         p.setLayout(null);

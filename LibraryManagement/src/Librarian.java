@@ -163,8 +163,8 @@ public class Librarian extends JFrame implements ActionListener
              jbb2.setVisible(false);
              jbb3.setVisible(false);
              
-             cnt.removeAll();
-             ReturnBook ob=new ReturnBook();
+            cnt.removeAll();
+            ReturnBook ob=new ReturnBook();
             ob.frame.setVisible(false);
             cnt.add(ob.parentPanel);
             cnt.repaint();

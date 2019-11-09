@@ -79,26 +79,7 @@ public class IssueBook extends JFrame implements ActionListener
         issueDt.setBounds(30,170,120,30);
         issueDt.setFont(text);
         p.add(issueDt);
-        
-        /*
-        issDt=new JTextField();
-        issDt.setBounds(170,170,50,30);
-        issDt.setFont(text);
-        issDt.setBackground(col);
-        p.add(issDt);
-        
-        issMnth=new JTextField();
-        issMnth.setBounds(245,170,50,30);
-        issMnth.setFont(text);
-        issMnth.setBackground(col);
-        p.add(issMnth);
-        
-        issYr=new JTextField();
-        issYr.setBounds(315,170,50,30);
-        issYr.setFont(text);
-        issYr.setBackground(col);
-        p.add(issYr);
-        */
+     
         String strDt[]=new String[31];
         for(int i=0;i<31;i++)
             strDt[i]=i+1+"";
@@ -212,24 +193,13 @@ public class IssueBook extends JFrame implements ActionListener
             {
                 rtnYr=intYr;
             }
-            
             returnDtTxt.setText(rtnDate+"/"+rtnMnth+"/"+rtnYr);
         }
-        /*
-         if(e.getSource()==btn1)
-        {
-            label1.setText("STUDENT LOG IN");
-        }
-          if(e.getSource()==btn2)
-        {
-            label1.setText("LIBRARIAN LOG IN");
-        }
-              */
+      
     }
     public static void main(String args[])
     {
         IssueBook ob =new IssueBook();
        
-        
     }
 }

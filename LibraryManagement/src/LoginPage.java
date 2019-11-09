@@ -4,15 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-/*
-public class LoginPage {
-    public static void main(String args[])
-    {
-        DesignLoginPage ob =new DesignLoginPage();
-
-        
-    }
-}*/
 public class LoginPage extends JFrame implements ActionListener
 {
     JLabel label1;
@@ -193,6 +184,10 @@ public class LoginPage extends JFrame implements ActionListener
             {
                 uname.setText("admin");
                 pass.setText("admin");
+            }
+            if(btn1.isSelected())
+            {
+               ForgotPassword ob =new ForgotPassword();
             }
        
     }
