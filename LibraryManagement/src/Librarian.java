@@ -22,7 +22,6 @@ public class Librarian extends JFrame implements ActionListener
     
     public Librarian() {
     f=new JFrame("Librarian");
-    f.setVisible(true);
     f.setBounds(0,0,1920,1080);
     f.setLayout(null);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -108,7 +107,8 @@ public class Librarian extends JFrame implements ActionListener
     jbb2.addActionListener(this);
     jbb3.addActionListener(this);
     
-    
+    f.setVisible(true);
+    f.setResizable(false);
     
     }
     

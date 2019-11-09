@@ -204,7 +204,7 @@ public class StudentPortal extends JFrame implements ActionListener
                */
         
             frame.setVisible(true);
-            frame.revalidate();
+            frame.setResizable(false);
     }
     public static void main(String args[])
     {

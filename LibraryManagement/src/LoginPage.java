@@ -130,6 +130,7 @@ public class LoginPage extends JFrame implements ActionListener
         forgot.addActionListener(this);
         
         frame.setVisible(true);
+        frame.setResizable(false);
         //  p.validate();
        
             
