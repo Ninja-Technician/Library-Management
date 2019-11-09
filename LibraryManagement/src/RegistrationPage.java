@@ -105,6 +105,7 @@ public class RegistrationPage extends JFrame implements ActionListener
         ok.addActionListener(this);
           
          frame.setVisible(true);
+         frame.setResizable(false);
       //  frame.revalidate();
        
             

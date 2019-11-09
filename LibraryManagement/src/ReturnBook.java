@@ -14,7 +14,7 @@ public class ReturnBook extends JFrame implements ActionListener
     JComboBox dt,mn,yr;
     JFrame frame;
     JPanel parentPanel;
-     String returnDat="15/12/2019";
+     String returnDat="15/5/2020";
     
     
     ReturnBook()
@@ -209,27 +209,33 @@ public class ReturnBook extends JFrame implements ActionListener
             intMnth=Integer.parseInt(returnDat.substring(returnDat.indexOf('/')+1,(returnDat.lastIndexOf('/'))));
             intYr=Integer.parseInt(returnDat.substring(returnDat.lastIndexOf('/')+1,returnDat.length()));
             
-            int day=0,temp=0;
+              System.out.println("Expected date = "+intDate+" / "+intMnth+" / "+intYr);
+              System.out.println("Returned date = "+rtnDate+" / "+rtnMnth+" / "+rtnYr);
+            int day=0,doNotEnter=0;
             double fineAmount=0.0;
            
             if(intMnth>rtnMnth)
             {
+                if(rtnYr>intYr)
                 rtnMnth=12+rtnMnth;
-                System.out.println("nxt yr case entered");
+                else
+                doNotEnter=1;
+                    System.out.println("intMnth > rtnMnth entered");
             }
-             if(intMnth==rtnMnth)
+             if((intMnth==rtnMnth)&&(intYr==rtnYr))
             {
-                day=intDate-rtnDate;
+                day=rtnDate-intDate;
                 System.out.println("equl to entered");
             }
             else
             {
-                if(temp==1)
-                    System.out.println("after increasing rtn mnth entered");
-                else
-                System.out.println("normal case entered");
+                if(!(doNotEnter==1))
+                {
+                      System.out.println("For loop section entered");
             for(int i=intMnth;i<=rtnMnth;i++)
             {
+                if(!(intMnth==rtnMnth))
+                {
                 if(i==intMnth)
                 {
                      if(i==2)
@@ -256,6 +262,8 @@ public class ReturnBook extends JFrame implements ActionListener
                 }
             }
             }
+            }
+            }
             /*
             if(rtnMnth>12)
             {
@@ -267,6 +275,9 @@ public class ReturnBook extends JFrame implements ActionListener
                 rtnYr=intYr;
             }
             */
+             day=day+(rtnYr-intYr)*365;
+             if(day<0)
+                 day=0;
             fineAmount=day*5;
             fine.setText("Rs. "+fineAmount+" & "+day+" days");
            // fine.setText(intDate+"/"+intMnth+"/"+intYr);
