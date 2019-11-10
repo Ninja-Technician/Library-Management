@@ -1,0 +1,7 @@
+databse 
+#library management
+
+table
+#student_registration(fname,lname,roll,email,mob,pass)
+#book(id,isbn,title,auth,price,pub,lang,edit,rack)
+#issue_book(isbn,roll,issd,expd,rtd)
